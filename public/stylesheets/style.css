@@ -1,0 +1,76 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  padding: 0;
+}
+
+a {
+  color: #00B7FF;
+}
+
+#title {
+  color: red;
+}
+
+#main {
+  border: 1px solid black;
+  width: 100%;
+  min-height: 400px
+}
+
+#flipboard {
+  border: 1px solid red;
+  min-height: 100px;
+  text-align: center;
+  padding: .5em;
+
+}
+
+.border {
+  border: 1px solid black
+}
+
+/* entire container, keeps perspective */
+.flip-container {
+	perspective: 1000px;
+}
+
+/* flip the pane when hovered */
+.flipped-container .flipper, .flip-container.hover .flipper {
+  background-color: black;
+  transform: rotateX(180deg);
+}
+
+.flip-container, .front, .back, .top {
+	width: 200px;
+	height: 200px;
+}
+
+/* flip speed goes here */
+.flipper {
+	transition: 0.6s;
+	transform-style: preserve-3d;
+
+	position: relative;
+}
+
+/* hide back of pane during swap */
+.front, .back {
+	backface-visibility: hidden;
+
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+/* front pane, placed above back */
+.front {
+	z-index: 2;
+	/* for firefox 31 */
+	transform: rotateX(0deg);
+}
+
+/* back, initially hidden pane */
+.back {
+	transform: rotateX(180deg);
+}

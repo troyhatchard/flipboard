@@ -1,0 +1,40 @@
+<html>
+
+<head>
+  <title>Express</title>
+  <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+
+<body>
+  <h1 id="title">Flipboard</h1>
+  <div id="main">
+    <button>Flip</button>
+    <div class="top">
+    </div>
+    <div id="flipboard" class="flip-container">
+      <div class="flipper">
+        <div class="front border">
+          Front
+        </div>
+        <div class="back border">
+          Back
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+<script type="text/javascript">
+  document.querySelector('button').addEventListener('click', flip)
+
+  function flip() {
+    const flipboard = document.querySelector('.flip-container')
+    if (flipboard.classList.contains('flipped-container')) {
+      flipboard.classList.remove('flipped-container')
+    } else {
+      flipboard.classList.add('flipped-container')
+    }
+    // flipboard.innerHTML = 'hello'
+  }
+  </script>
+
+</html>
